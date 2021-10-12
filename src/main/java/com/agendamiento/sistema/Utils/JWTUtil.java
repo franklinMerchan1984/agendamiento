@@ -35,7 +35,7 @@ public class JWTUtil {
      * @param subject
      * @return
      */
-    //creara el JWT el texto de informacion que se le posa al cliente
+    //creara el JWT el texto de informacion que se le pasa al cliente
     public String create(String id, String subject) {
 
         // The JWT signature algorithm used to sign the token
