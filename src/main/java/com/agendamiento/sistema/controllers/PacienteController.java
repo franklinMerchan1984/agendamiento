@@ -2,9 +2,7 @@ package com.agendamiento.sistema.controllers;
 
 import com.agendamiento.sistema.Utils.JWTUtil;
 import com.agendamiento.sistema.dao.PacienteDao;
-import com.agendamiento.sistema.dao.UsuarioDao;
 import com.agendamiento.sistema.models.Paciente;
-import com.agendamiento.sistema.models.Usuario;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +18,7 @@ public class PacienteController {
 
     @Autowired
     private JWTUtil jwtUtil;
+
 
     @RequestMapping(value = "api/pacientes/{id}", method = RequestMethod.GET)//por defecto ya utiliza este metodo
     public Paciente getPaciente(@PathVariable Long id){

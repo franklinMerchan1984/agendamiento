@@ -15,7 +15,7 @@ function actualizarEmailDelPaciente(){
 //java scrip puro
 async function cargarPacientes(){
 //cuando se utiliza await debemos indicar a la funcion que es asincronica
-  const request = await fetch('api/paciente', {//request=variable
+  const request = await fetch('api/pacientes', {//request=variable
     method: 'GET',
     headers: getHeaders()
   });

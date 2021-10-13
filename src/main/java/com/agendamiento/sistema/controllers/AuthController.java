@@ -22,24 +22,18 @@ public class AuthController {
     @Autowired
     private JWTUtil jwtUtil;
 
-
     @RequestMapping(value = "api/login", method = RequestMethod.POST)
     public String login(@RequestBody Usuario usuario,Paciente paciente){//recibo el email y el password
 
         Usuario usuarioLogueado= usuarioDao.optenerUsuarioPorCredenciales(usuario);
-        Paciente pacienteLogueado= pacienteDao.optenerPacientePorCredenciales(paciente);
         if (usuarioLogueado != null){
             String tokenJwt = jwtUtil.create(String.valueOf(usuarioLogueado.getId()), usuarioLogueado.getEmail());
             return tokenJwt;
-        }else if (pacienteLogueado != null){
-            String tokenJwt = jwtUtil.create(String.valueOf(pacienteLogueado.getId()), pacienteLogueado.getEmail());
-            return tokenJwt;
-
         }
         return "FAIL";
     }
 
-    /*@RequestMapping(value = "api/login", method = RequestMethod.POST)
+    @RequestMapping(value = "api/loginpaciente", method = RequestMethod.POST)
     public String login(@RequestBody Paciente paciente){//recibo el email y el password
 
         Paciente pacienteLogueado= pacienteDao.optenerPacientePorCredenciales(paciente);
@@ -48,5 +42,5 @@ public class AuthController {
             return tokenJwt;
         }
         return "FAIL";
-    }*/
+    }
 }

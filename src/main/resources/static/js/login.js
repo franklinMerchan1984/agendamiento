@@ -34,7 +34,7 @@ async function inciarSesionPaciente(){//peticion request
     datos.password = document.getElementById('txtPassword').value;
 
     //llamado al servidor
-  const request = await fetch('api/login', {//request=variable//cuando se utiliza await debemos indicar a la funcion que es asincronica
+  const request = await fetch('api/loginpaciente', {//request=variable//cuando se utiliza await debemos indicar a la funcion que es asincronica
     method: 'POST',
     headers: {
       'Accept': 'application/json',

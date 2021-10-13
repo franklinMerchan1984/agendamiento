@@ -14,7 +14,7 @@ import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Date;
 
-@Component//anotacion para poder compartir en todos los lugaras ypoder usar las otras anotaciones como value para poder cargar informacion de las properties
+@Component//anotacion para poder compartir en todos los lugaras y poder usar las otras anotaciones como value para poder cargar informacion de las properties
 public class JWTUtil {
     @Value("${security.jwt.secret}")//
     private String key;//aqui se va a cargar el property
