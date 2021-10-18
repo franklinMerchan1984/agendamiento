@@ -2,8 +2,10 @@ package com.agendamiento.sistema.controllers;
 
 import com.agendamiento.sistema.Utils.JWTUtil;
 import com.agendamiento.sistema.dao.PacienteDao;
+import com.agendamiento.sistema.dao.TurnosDao;
 import com.agendamiento.sistema.dao.UsuarioDao;
 import com.agendamiento.sistema.models.Paciente;
+import com.agendamiento.sistema.models.Turnos;
 import com.agendamiento.sistema.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,10 +22,14 @@ public class AuthController {
     private PacienteDao pacienteDao;
 
     @Autowired
+    private TurnosDao turnosDao;
+
+
+    @Autowired
     private JWTUtil jwtUtil;
 
     @RequestMapping(value = "api/login", method = RequestMethod.POST)
-    public String login(@RequestBody Usuario usuario,Paciente paciente){//recibo el email y el password
+    public String login(@RequestBody Usuario usuario){//recibo el email y el password
 
         Usuario usuarioLogueado= usuarioDao.optenerUsuarioPorCredenciales(usuario);
         if (usuarioLogueado != null){
@@ -43,4 +49,16 @@ public class AuthController {
         }
         return "FAIL";
     }
+
+    @RequestMapping(value = "api/loginTurno", method = RequestMethod.POST)
+    public String login(@RequestBody Turnos turno){//recibo el email y el password
+
+        Turnos turnoLogueado= turnosDao.optenerTurnoPorCedula(turno);
+        if (turnoLogueado != null){
+            String tokenJwt = jwtUtil.create(String.valueOf(turnoLogueado.getId()), turnoLogueado.getCedula());
+            return tokenJwt;
+        }
+        return "FAIL";
+    }
+
 }

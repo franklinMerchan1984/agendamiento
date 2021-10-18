@@ -14,6 +14,7 @@ function actualizarEmailDelPaciente(){
 
 //java scrip puro
 async function cargarPacientes(){
+
 //cuando se utiliza await debemos indicar a la funcion que es asincronica
   const request = await fetch('api/pacientes', {//request=variable
     method: 'GET',
@@ -21,7 +22,7 @@ async function cargarPacientes(){
   });
   const pacientes = await request.json();//RESULTADO SE CONVIERTE EN JSON
 
-    let listadoHtml = '';//por cada Paciente que se recorra se agrega en esta variable
+    let listadoHtml = '';//por cada pacientes que se recorra se agrega en esta variable
     for (let paciente of pacientes){
         let botonEliminar = '<a href="#" onclick="eliminarPaciente(' + paciente.id + ')" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a>';
 

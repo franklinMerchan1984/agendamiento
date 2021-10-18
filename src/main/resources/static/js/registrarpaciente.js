@@ -4,8 +4,10 @@ $(document).ready(function() {//ejecute el codigo
 //java scrip puro
 async function registrarPaciente(){//peticion request
     let datos = {};//los datos deben ser los mismo sque recibimos
+    datos.cedula = document.getElementById('txtCedula').value;
     datos.nombre = document.getElementById('txtNombre').value;
     datos.apellido = document.getElementById('txtApellido').value;
+    datos.telefono = document.getElementById('txtTelefono').value;
     datos.email = document.getElementById('txtEmail').value;
     datos.password = document.getElementById('txtPassword').value;
 
