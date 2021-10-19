@@ -44,7 +44,7 @@ public class TurnosController {
         return turnoId != null;
     }
 
-    @RequestMapping(value = "api/turno", method = RequestMethod.POST)
+    @RequestMapping(value = "api/turnopost", method = RequestMethod.POST)
     public void registrarTurnos(@RequestBody Turnos turno){
     String hash = (turno.getCedula());
         turno.setCedula(hash);
