@@ -48,7 +48,7 @@ async function inciarSesionPaciente(){//peticion request
   if (response != 'FAIL'){
  windowGlobal.localStorage.token = response;
  windowGlobal.localStorage.email = datos.email;
-     window.location.href = 'pacientes.html'
+     window.location.href = 'turnosPacientes.html'
   } else {
     alert("las credenciales son incorrectas. Por favor intente nuevamente.");
   }

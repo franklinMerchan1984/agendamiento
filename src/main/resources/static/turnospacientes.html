@@ -41,7 +41,7 @@
             </a>
 
             <li class="nav-item active">
-                <a class="nav-link" href="usuarios.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Usuarios</span></a>
             </li>
@@ -53,7 +53,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="turnos.html">
+                <a class="nav-link" href="turnospacientes.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Turnos Médicos</span></a>
             </li>
@@ -134,7 +134,7 @@
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->
-                            <div class="form-group row">
+                            <div class="row">
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center">
@@ -142,7 +142,7 @@
                                         </div>
 
                                         <div class="container">
-                                        <form class="center">
+                                        <form class="user">
 
                                                 <div class="form-group row">
                                                     <label class="col-md-2" for="txtCedula">Cedula:</label>
@@ -151,8 +151,9 @@
                                                     <small></small>
                                                 </div>
                                                     <div class="form-group row">
-                                                        <label class="col-md-2" for="txtEspecialidad">Especialidad:</label>
+                                                        <label class="col-md-2" for="txtEspecialidad"></label>
                                                                <select class="form-control form-control-sm col-md-6" id="txtEspecialidad">
+                                                                   <option value="0">Especialidad</option>
                                                                    <option>Medicina General</option>
                                                                    <option>Odontología</option>
                                                                    <option>Pediatría</option>
@@ -188,7 +189,7 @@
                                             </div>
 
 
-                                            <a onclick="registrarTurno()" href="turnos.html" class="btn btn-primary btn-user btn-block">
+                                            <a onclick="registrarTurno()" href="turnospacientes.html" class="btn btn-primary btn-user btn-block">
                                                 Registrar
                                             </a>
 
@@ -201,10 +202,10 @@
                     </div>
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Gestion de Turnos</h1>
+                    <!--<h1 class="h3 mb-2 text-gray-800">Gestion de Turnos</h1>
                     <p class="mb-4"></p>
 
-                    <!-- DataTales Example -->
+
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Listado de Turnos</h6>
@@ -228,7 +229,7 @@
                                 </table>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                 </div>
                 <!-- /.container-fluid -->

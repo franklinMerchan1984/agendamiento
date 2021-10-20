@@ -35,7 +35,7 @@ public class TurnoDaoImp implements TurnosDao {
     }
 
     @Override
-    public void registrar(Turnos turno) {
+    public void registrar(Turnos turno)   {
 
         entityManager.merge(turno);//para guardar en la base de datos
     }

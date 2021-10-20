@@ -7,6 +7,7 @@ import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -45,11 +46,12 @@ public class TurnosController {
     }
 
     @RequestMapping(value = "api/turnopost", method = RequestMethod.POST)
-    public void registrarTurnos(@RequestBody Turnos turno){
+    public void registrarTurnos(@RequestBody Turnos turno, RedirectAttributes attribute)  {
     String hash = (turno.getCedula());
         turno.setCedula(hash);
 
         turnosDao.registrar(turno);
+        attribute.addFlashAttribute("success", "Turno guardado con exito!");
     }
 
     @RequestMapping(value = "turno2")
