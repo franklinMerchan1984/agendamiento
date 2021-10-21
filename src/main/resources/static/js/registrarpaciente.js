@@ -13,7 +13,7 @@ async function registrarPaciente(){//peticion request
 
     let repetirPassword = document.getElementById('txtRepetirPassword').value;
 
-    if(repetirPassword != datos.password){
+    if(repetirPassword != datos.password){ñ
     alert('La contraseña que escribiste es diferente.');
     return;
     }

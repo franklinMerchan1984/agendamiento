@@ -16,7 +16,7 @@ async function registrarTurno(){//peticion request
     //}
 
 
-  const request = await fetch('api/turnopost', RedirectAttributes attribute {//request=variable//cuando se utiliza await debemos indicar a la funcion que es asincronica
+  const request = await fetch('api/turnopost',  {//request=variable//cuando se utiliza await debemos indicar a la funcion que es asincronica
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -26,8 +26,6 @@ async function registrarTurno(){//peticion request
   });
   if(!datos==null){
   alert("El turno fue creado con exito");
-  attribute.addFlashAttribute("success", "Turno guardado con exito!");
-
      //window.location.href = 'Login.html'
      }else{
      alert("Datos incorrectos");
