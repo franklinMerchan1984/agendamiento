@@ -24,10 +24,6 @@ async function registrarTurno(){//peticion request
     },
       body: JSON.stringify(datos)//stringify coje cualquier objeto de js y le convierte a un string de json
   });
-  if(!datos==null){
   alert("El turno fue creado con exito");
-     //window.location.href = 'Login.html'
-     }else{
-     alert("Datos incorrectos");
-     }
+     window.location.href = 'turnospacientes.html'
   }

@@ -46,12 +46,10 @@ public class TurnosController {
     }
 
     @RequestMapping(value = "api/turnopost", method = RequestMethod.POST)
-    public void registrarTurnos(@RequestBody Turnos turno, RedirectAttributes attribute)  {
+    public void registrarTurnos(@RequestBody Turnos turno)  {
     String hash = (turno.getCedula());
         turno.setCedula(hash);
-
         turnosDao.registrar(turno);
-        attribute.addFlashAttribute("success", "Turno guardado con exito!");
     }
 
     @RequestMapping(value = "turno2")
